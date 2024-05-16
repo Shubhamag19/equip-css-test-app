@@ -14,10 +14,17 @@ const LeftComponent = ({ editorValueHandler }) => {
     });
   };
 
+  const handleCut = () => {
+    navigator.clipboard.readText().then((text) => {
+      setCopiedValue(text);
+    });
+  };
+
   return (
     <div
       className="stw-w-2/5 stw-h-full stw-flex stw-flex-col soc-monaco-editor-css-ctr"
       onCopy={handleCopy}
+      onCut={handleCut}
     >
       <div className="h-[70vh]">
         <CodeEditor

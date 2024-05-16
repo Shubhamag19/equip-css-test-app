@@ -32,13 +32,20 @@ const CodeEditor = ({ handleHtmlValue, copiedContent }) => {
     }
   };
 
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
   useEffect(() => {
     const editorParentDiv = editorParentDivRef.current;
     if (editorParentDiv) {
       editorParentDiv.addEventListener("paste", handlePaste, true);
+      editorParentDiv.addEventListener("contextmenu", handleContextMenu, true);
     }
     return () => {
       editorParentDiv.removeEventListener("paste", handlePaste, true);
+      editorParentDiv.removeEventListener("contextmenu", handleContextMenu, true);
     };
   }, []);
 
