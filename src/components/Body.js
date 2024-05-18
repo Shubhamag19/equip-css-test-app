@@ -17,15 +17,15 @@ const Body = () => {
     };
 
     const handleClipboardChange = () => {
-      if (document.visibilityState === "hidden") {
-        copyToClipboard("\u200B");
-      }
+      copyToClipboard("\u200B");
     };
 
     document.addEventListener("visibilitychange", handleClipboardChange);
+    document.addEventListener("mouseleave", handleClipboardChange);
 
     return () => {
       document.removeEventListener("visibilitychange", handleClipboardChange);
+      document.removeEventListener("mouseleave", handleClipboardChange);
     };
   }, []);
 

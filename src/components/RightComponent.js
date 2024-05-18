@@ -108,9 +108,7 @@ const RightComponent = ({ editorValue }) => {
         </div>
       </div>
 
-      <div
-        className="stw-flex stw-flex-col stw-w-full stw-h-1/2 soc-css-cs-expected-output"
-      >
+      <div className="stw-flex stw-flex-col stw-w-full stw-h-1/2 soc-css-cs-expected-output">
         <div className="stw-border stw-border-gray-700 stw-w-full stw-h-full stw-flex stw-flex-col">
           <div className="stw-flex stw-flex-row stw-justify-between stw-p-2">
             <p>Target</p>
